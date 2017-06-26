@@ -230,7 +230,7 @@ endif()
 set(_install_targets ddApp directorPython drake-visualizer)
 
 add_executable(drake-visualizer drakeVisualizerApp.cpp)
-target_link_libraries(drake-visualizer ddApp)
+target_link_libraries(drake-visualizer ddApp ${PYTHON_LIBRARIES})
 
 if(USE_DRC)
   add_executable(director main.cpp)
