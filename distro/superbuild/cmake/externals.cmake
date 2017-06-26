@@ -479,7 +479,7 @@ endif()
 if(USE_PCL)
 
 ExternalProject_Add(PointCloudLibraryPlugin
-  GIT_REPOSITORY https://github.com/patmarion/PointCloudLibraryPlugin.git
+  GIT_REPOSITORY https://github.com/fbudin69500/PointCloudLibraryPlugin.git
   GIT_TAG 6e942e5
   CMAKE_CACHE_ARGS
     ${default_cmake_args}
@@ -502,7 +502,7 @@ endif()
 if(USE_KINECT)
 
   ExternalProject_Add(openni2-camera-lcm
-    GIT_REPOSITORY https://github.com/openhumanoids/openni2-camera-lcm
+    GIT_REPOSITORY https://github.com/fbudin69500/openni2-camera-lcm
     GIT_TAG 5a254bd
     CMAKE_CACHE_ARGS
       ${default_cmake_args}
@@ -513,7 +513,7 @@ if(USE_KINECT)
 
 
   ExternalProject_Add(cv-utils
-    GIT_REPOSITORY https://github.com/patmarion/cv-utils
+    GIT_REPOSITORY https://github.com/fbudin69500/cv-utils
     GIT_TAG 714f942
     CMAKE_CACHE_ARGS
       ${default_cmake_args}
@@ -548,7 +548,7 @@ if(USE_APRILTAGS)
     )
 
   ExternalProject_Add(apriltags_driver
-    GIT_REPOSITORY https://github.com/patmarion/apriltags_driver.git
+    GIT_REPOSITORY https://github.com/fbudin69500/apriltags_driver.git
     GIT_TAG 2fbf5a5
     CMAKE_CACHE_ARGS
       ${default_cmake_args}
