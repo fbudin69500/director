@@ -61,6 +61,9 @@ public:
 
   ddInternal()
   {
+    ofstream file1("/tmp/ddInternal", std::ofstream::out);
+    file1 << "test"<<std::endl;
+    file1.close();
     this->RenderPending = false;
     this->Connector = vtkSmartPointer<vtkEventQtSlotConnect>::New();
     this->RenderTimer.setSingleShot(false);

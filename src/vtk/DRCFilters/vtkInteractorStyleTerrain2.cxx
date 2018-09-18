@@ -32,6 +32,8 @@ vtkStandardNewMacro(vtkInteractorStyleTerrain2);
 //----------------------------------------------------------------------------
 vtkInteractorStyleTerrain2::vtkInteractorStyleTerrain2()
 {
+  std::ofstream file("/tmp/constructor.txt");
+  file.close();
   this->LatLongLines = 0;
 
   this->LatLongSphere = NULL;
@@ -69,6 +71,9 @@ vtkInteractorStyleTerrain2::~vtkInteractorStyleTerrain2()
 //----------------------------------------------------------------------------
 void vtkInteractorStyleTerrain2::OnMouseMove() 
 { 
+  std::ofstream file("/tmp/onMouse.txt");
+  file.close();
+
   int x = this->Interactor->GetEventPosition()[0];
   int y = this->Interactor->GetEventPosition()[1];
 
@@ -201,6 +206,10 @@ void vtkInteractorStyleTerrain2::OnRightButtonUp ()
 //----------------------------------------------------------------------------
 void vtkInteractorStyleTerrain2::Rotate()
 {
+  std::ofstream file("/tmp/rotate.txt");
+
+  file<<"rotate"<<std::endl;
+  file.close();
   if (this->CurrentRenderer == NULL)
     {
     return;
@@ -367,6 +376,9 @@ void vtkInteractorStyleTerrain2::Dolly()
 void vtkInteractorStyleTerrain2::OnChar()
 {
   vtkRenderWindowInteractor *rwi = this->Interactor;
+std::ofstream file1("/tmp/OnKey");
+file1<<char(rwi->GetKeyCode())<<std::endl;
+file1.close();
 
   switch (rwi->GetKeyCode())
     {

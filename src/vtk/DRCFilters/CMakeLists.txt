@@ -167,6 +167,7 @@ endif()
 set(library_name vtkDRCFilters)
 add_library(${library_name} ${sources} ${EXTRA_SRCS})
 target_link_libraries(${library_name} ${deps})
+target_include_directories(${library_name} PUBLIC ${EIGEN_INCLUDE_DIRS})
 
 if(pkg_deps)
   use_pkg(${library_name} ${pkg_deps})

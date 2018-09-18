@@ -18,7 +18,8 @@ def main(globalsDict=None):
         drcargs.requireStrict()
 
     appName = 'Drake Visualizer'
-
+    with open("/tmp/pythonlog", "w") as f:
+        f.write("plop")
     fact = mainwindowapp.ComponentFactory()
     fact.register(mainwindowapp.MainWindowAppFactory)
     fact.register(mainwindowapp.MainWindowPanelFactory)

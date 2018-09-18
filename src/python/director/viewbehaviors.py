@@ -103,6 +103,9 @@ def showRightClickMenu(displayPoint, view):
 
 def zoomToPick(displayPoint, view):
     pickedPoint, prop, _ = vis.pickProp(displayPoint, view)
+    with open("/tmp/pythonfvaa", "w") as f:
+        f.write(str(displayPoint))
+        f.write(str(pickedPoint))
     if not prop:
         return
     flyer = cameracontrol.Flyer(view)
@@ -156,6 +159,7 @@ class ViewBehaviors(vieweventfilter.ViewEventFilter):
         key = str(event.text()).lower()
 
         if key == 'f':
+            open("/tmp/pythonf", "w").close()
             consumed = True
             zoomToPick(self.getCursorDisplayPosition(), self.view)
 

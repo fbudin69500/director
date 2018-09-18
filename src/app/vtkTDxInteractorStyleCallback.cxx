@@ -46,6 +46,8 @@ vtkTDxInteractorStyleCallback::~vtkTDxInteractorStyleCallback()
 // ----------------------------------------------------------------------------
 void vtkTDxInteractorStyleCallback::OnMotionEvent(vtkTDxMotionEventInfo *motionInfo)
 {
+  std::ofstream file("/tmp/vtkTDxInteractorStyle");
+  file.close();
   this->Translation[0] = motionInfo->X;
   this->Translation[1] = motionInfo->Y;
   this->Translation[2] = motionInfo->Z;

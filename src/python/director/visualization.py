@@ -29,7 +29,8 @@ class PolyDataItem(om.ObjectModelItem):
     def __init__(self, name, polyData, view):
 
         om.ObjectModelItem.__init__(self, name, om.Icons.Robot)
-
+        with open("/tmp/visualization", "w") as f:
+            f.write("ini visualization")
         self.views = []
         self.polyData = polyData
         self.mapper = vtk.vtkPolyDataMapper()
@@ -1155,6 +1156,9 @@ def pickPoint(displayPoint, view, obj=None, pickType='points', tolerance=0.01):
     pickedPoint = np.array(picker.GetPickPosition())
     pickedDataset = pickedProp.GetMapper().GetInput() if isinstance(pickedProp, vtk.vtkActor) else None
 
+    with open("/tmp/point", "w") as f:
+        f.write("%f, %f\n" %(displayPoint[0], displayPoint[1]))
+        f.write("%f, %f, %f\n"%(pickedPoint[0], pickedPoint[1], pickedPoint[2]))
 
     if pickType == "cells":
         pickedCellId = picker.GetCellId()
